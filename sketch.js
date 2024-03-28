@@ -41,11 +41,17 @@ function touchStarted() {
 }
 
 function mouseReleased(){
+    
     var d = dist(touchX, touchY, mouseX, mouseY);
     if (d > 75) { // Adjust this threshold as needed
         setTimeout(() => {
             slingshot.fly();
         }, 100);
+        setTimeout(() => {
+            bird.reset();
+            slingshot.reset();
+            console.log("in");
+        }, 1000);
     }
 }
 var touchX, touchY;
@@ -58,6 +64,10 @@ function touchEnded() {
         setTimeout(() => {
             slingshot.fly();
         }, 100);
+        setTimeout(() => {
+            bird.body.position = {x:200, y:200};
+            console.log("in");
+        }, 500);
     }
 }
 

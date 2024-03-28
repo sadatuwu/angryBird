@@ -1,6 +1,6 @@
 class SlingShot{
     constructor(x,y,body){
-
+        this.body = body;
         const options = {
             pointA : {x:x, y:y},
             bodyB : body,
@@ -14,6 +14,9 @@ class SlingShot{
 
     fly(){
         this.sling.bodyB = null;
+    }
+    reset(){
+        this.sling.bodyB = this.body;
     }
     show(){
         if(this.sling.bodyB!=null){
