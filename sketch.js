@@ -51,7 +51,7 @@ function mouseReleased(){
             bird.reset();
             slingshot.reset();
             console.log("in");
-        }, 1000);
+        }, 3000);
     }
 }
 var touchX, touchY;
@@ -65,9 +65,10 @@ function touchEnded() {
             slingshot.fly();
         }, 100);
         setTimeout(() => {
-            bird.body.position = {x:200, y:200};
+            bird.reset();
+            slingshot.reset();
             console.log("in");
-        }, 500);
+        }, 3000);
     }
 }
 
